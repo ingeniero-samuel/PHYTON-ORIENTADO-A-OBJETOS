@@ -1,0 +1,134 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/ingeniero-samuel/PHYTON-ORIENTADO-A-OBJETOS/blob/main/creando%20objetos\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Animal:\n",
+        "  def __init__(self,name):\n",
+        "    self.name = name\n",
+        "  def make_noise(self):\n",
+        "    print(\"{} says, grrr\".format(self.name))\n",
+        "\n",
+        "class Cat(Animal):\n",
+        "  def make_noise(self):\n",
+        "    print(\"{} says, meow\".format(self.name))\n",
+        "\n",
+        "class Robot:\n",
+        "    def make_noise(self):\n",
+        "      print(\"beep.boop...BEEP!!!\")\n",
+        "\n",
+        "# Crear instancias de las clases\n",
+        "animal = Animal(\"Tiger\")\n",
+        "cat = Cat(\"Whiskers\")\n",
+        "robot = Robot()\n",
+        "\n",
+        "# Llamar a los métodos make_noise() de cada instancia\n",
+        "animal.make_noise()  # Esto imprimirá \"Tiger says, grrr\"\n",
+        "cat.make_noise()     # Esto imprimirá \"Whiskers says, meow\"\n",
+        "robot.make_noise()   # Esto imprimirá \"beep.boop...BEEP!!!\"\n",
+        "\n",
+        "\n",
+        "\n",
+        ""
+      ],
+      "metadata": {
+        "id": "zYu6kQNsmsIE",
+        "outputId": "4b2a2bff-15f4-4087-fc4d-5b74bdb8832f",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Tiger says, grrr\n",
+            "Whiskers says, meow\n",
+            "beep.boop...BEEP!!!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##Ejercisio"
+      ],
+      "metadata": {
+        "id": "ZncjWS5O0VVO"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "class Employee:\n",
+        "  new_id = 1\n",
+        "  def __init__(self, new_id):\n",
+        "    self.id = new_id + 1\n",
+        "  def say_id(self):\n",
+        "    print(\"my id is:\", self.id)\n",
+        "\n",
+        "e1 = Employee(100)\n",
+        "e2 = Employee(200)\n",
+        "#aqui mencionan su id\n",
+        "e1.say_id()\n",
+        "e2.say_id()\n",
+        "\n",
+        "class Admin(Employee):\n",
+        "  def say_id(self):\n",
+        "    print(\"I am an admin\")\n",
+        "    Employee.say_id\n",
+        "\n",
+        "e3 = Admin(300)\n",
+        "e3.say_id()\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "wpB_IjXs0brL",
+        "outputId": "6abdc5ff-0eac-427a-cdf3-7c0776d62bcb",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "my id is: 101\n",
+            "my id is: 201\n",
+            "I am an admin\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
